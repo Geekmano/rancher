@@ -2,9 +2,9 @@
   name: postgres 
   version: 9.3 # Version of the versioned template of the Catalog Entry 
   description: oge db service # Description of the versioned template of the Catalog Entry
-  uuid: postgres_0 # Unique identifier to be used for upgrades. Please see note. 
+  uuid: postgres-0 # Unique identifier to be used for upgrades. Please see note. 
   questions: 
-    - variable: userpath
+    - variable: user_path
       description: "用户目录"
       label: "服务器用户目录"
       default: "oge"
