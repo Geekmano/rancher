@@ -1,0 +1,22 @@
+kdm-rmq-producer: 
+  image: docker.orientge.cn:5000/oge/kdm-rmq-producer:1.0.0-SNAPSHOT
+  ports: 
+    - ${server_port}:80/tcp
+  external_links: 
+    - ${consul_service}:consul
+    - ${consul_service}:rtdb
+    - ${kafka_host}:kafka
+  environment: 
+    rtdb.type: ${rtdb_server}
+    rtdb.rule: ${rtdb_host}
+    rtdb.host: rtdb
+    rtdb.port: ${rtdb_username}
+    rtdb.username: ${rtdb_username}
+    rtdb.password: ${rtdb_password}
+    kdm.rmq.producer.mq.host: kafka
+    kdm.rmq.producer.mq.port: ${kafka_port}
+    kdm.rmq.producer.manager.host: ${kafka_port}
+    spring.application.name: ${spring_application_name}
+  volumes: 
+    - /home/${user_path}/oge_program/log/kdm_rdp_standard/:/code/log
+  container_name: kdm-rmq-producer

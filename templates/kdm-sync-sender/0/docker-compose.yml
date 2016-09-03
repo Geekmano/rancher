@@ -1,0 +1,21 @@
+kdm-sync-sender: 
+  image: docker.orientge.cn:5000/oge/kdm-sync-sender:2.4.0-SNAPSHOT
+  ports: 
+    - ${server_port}:80/tcp
+  external_links: 
+    - ${consul_service}:consul
+  environment: 
+    kdm.sync.postgre.host: ${postgres_host}
+    kdm.sync.postgre.port: ${postgres_port}
+    kdm.sync.postgre.name: ${postgres_database}
+    kdm.sync.postgre.username: ${postgres_username}
+    kdm.sync.postgre.password: ${postgres_password}
+    kdm.sync.source.host: ${source_host}
+    kdm.sync.source.port: ${source_port}
+    kdm.sync.activemq.host: ${activemq_host}
+    kdm.sync.activemq.port: ${activemq_port}
+    kdm.sync.sender.main-mq.kafka.zk.url: ${zookeeper_url}
+    spring.profiles.active: ${sync_sender_type}
+  volumes: 
+    - /home/${user_path}/oge_program/log/kdm_sync_sender/:/oge/log
+  container_name: kdm-sync-sender

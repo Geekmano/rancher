@@ -1,0 +1,5 @@
+name: kdm-sync-receiver
+description: |
+   kdm同步程序接受端，启动依赖activemq
+version: 2.4.0-SNAPSHOT
+category: Clustering

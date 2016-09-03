@@ -1,0 +1,16 @@
+kdm-rdp: 
+  image: docker.orientge.cn:5000/oge/kdm-rdp:3.6.0-RC3
+  ports: 
+    - ${server_port}:8082/tcp
+  external_links: 
+    - ${consul_service}:consul
+    - ${postgres_host}:postgres
+  environment: 
+    jdbc.port: ${postgres_port} 
+    jdbc.database: ${postgres_database} 
+    jdbc.username: ${postgres_user} 
+    jdbc.password: ${postgres_password} 
+    kdm.rdp.evaluation.job.fixed-rate: ${rdp_eva}
+  volumes: 
+    - /home/${user_path}/oge_program/log/kdm_rdp_standard/:/oge/log
+  container_name: kdm-rdp-standard

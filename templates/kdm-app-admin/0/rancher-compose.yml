@@ -1,0 +1,21 @@
+.catalog: 
+  name: kdm-app-admin
+  version: 1.0.0 # Version of the versioned template of the Catalog Entry 
+  description: 实时数据平台spring boot 管理模块 # Description of the versioned template of the Catalog Entry
+  uuid: kdm-app-admin-0 # Unique identifier to be used for upgrades. Please see note. 
+  questions:
+    - variable: server_port
+      description: "spring boot admin 服务端口号"
+      label: "spring.boot.admin.port"
+      required: true
+      default: 8090
+      type: "int"
+
+    - variable: consul_service
+      description: "consul集群服务"
+      label: "consul服务"
+      required: true
+      type: "service"
+
+kdm-app-admin: 
+  scale: 1

@@ -1,0 +1,16 @@
+kdm-rmq-manager: 
+  image: docker.orientge.cn:5000/oge/kdm-rmq-manager:1.0.0-SNAPSHOT
+  ports: 
+    - ${server_port}:80/tcp
+  external_links: 
+    - ${consul_service}:consul
+    - ${postgres_host}:db
+  environment: 
+    jdbc.host: db
+    jdbc.port: ${postgres_port} 
+    jdbc.database: ${postgres_database} 
+    jdbc.username: ${postgres_user} 
+    jdbc.password: ${postgres_password} 
+  volumes: 
+    - /home/${user_path}/oge_program/log/kdm_rmq_manager/${web_port}:/oge/log
+  container_name: kdm-rmq-manager

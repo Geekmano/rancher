@@ -1,0 +1,12 @@
+﻿db: 
+  image: postgres:9.3
+  ports: 
+    - ${db_port}:5432
+  environment: 
+    POSTGRES_PASSWORD: ${db_password}
+    POSTGRES_DB: ${db_name} 
+  volumes: 
+    - /home/${user_path}/oge_program/kdm_db/data/:/var/lib/postgresql/data
+    - /home/${user_path}/oge_program/kdm_db/init/:/docker-entrypoint-initdb.d/
+    - /home/${user_path}/oge_program/kdm_db/backup:/backup
+  container_name: postgres

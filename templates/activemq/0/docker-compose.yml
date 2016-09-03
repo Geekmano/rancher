@@ -1,0 +1,16 @@
+activemMQ: 
+  image: webcenter/activemq:latest
+  ports: 
+    - ${admin_port}:8161/tcp
+    - ${openwire_port}:61616
+    - 61613:61613
+  environment: 
+    ACTIVEMQ_ADMIN_LOGIN: admin
+    ACTIVEMQ_ADMIN_PASSWORD: admin
+    ACTIVEMQ_MIN_MEMORY: ${min_memory}
+    ACTIVEMQ_MAX_MEMORY: ${max_memory}
+    ACTIVEMQ_ENABLED_SCHEDULER: true
+  volumes: 
+    - /home/${user_path}/oge_program/log/activemq/${admin_port}:/var/log/activemq
+    - /home/${user_path}/oge_program/data/activemq/${admin_port}:/data/activemq
+  container_name: activemq

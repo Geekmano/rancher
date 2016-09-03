@@ -1,0 +1,5 @@
+name: kdm-app-admin
+description: |
+   实时数据平台spring boot 管理模块
+version: 1.0.0
+category: Clustering

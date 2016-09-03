@@ -1,0 +1,52 @@
+.catalog: 
+  name: kdm-sync-receiver 
+  version: 2.4.0-SNAPSHOT # Version of the versioned template of the Catalog Entry 
+  description: 同步服务发送端 # Description of the versioned template of the Catalog Entry
+  uuid: kdm-sync-receiver-0 # Unique identifier to be used for upgrades. Please see note. 
+  questions:
+    - variable: server_port
+      description: "kdm同步接收端服务端口号"
+      label: "kdm.sync.receiver.server.port"
+      required: true
+      default: 8087
+      type: "int"
+    - variable: kdm_rdp_host
+      description: "kdm-rdp Dubbo端口号"
+      label: "kdm.rdp.dubbo.port"
+      required: true
+      type: "string"
+    - variable: rdp_dubbo_port
+      description: "kdm-rdp Dubbo端口号"
+      label: "kdm.rdp.dubbo.port"
+      required: true
+      default: 20883
+      type: "int"
+
+    - variable: activemq_host
+      description: "activemq地址"
+      label: "activemq.host"
+      required: true
+      type: "string"      
+    - variable: activemq_port
+      description: "activemq端口号"
+      label: "activemq.port"
+      default: 61616
+      required: true
+      type: "int"
+
+
+    - variable: user_path
+      description: "用户目录"
+      label: "服务器用户目录"
+      default: "oge"
+      required: false
+      type: "string"
+  
+    - variable: consul_service
+      description: "consul集群服务"
+      label: "consul服务"
+      required: true
+      type: "service"
+  
+kdm-sync-receiver: 
+  scale: 1

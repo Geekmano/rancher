@@ -1,0 +1,5 @@
+name: vzdb
+description: |
+   海量实时数据库
+version: 2.72.1-rancher
+category: Versioning

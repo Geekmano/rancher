@@ -1,0 +1,72 @@
+.catalog: 
+  name: kdm-rtdb 
+  version: 3.9.0-SNAPSHOT # Version of the versioned template of the Catalog Entry 
+  description: oge product kdm-rtdb # Description of the versioned template of the Catalog Entry
+  uuid: kdm-rtdb-0 # Unique identifier to be used for upgrades. Please see note. 
+  questions:
+    - variable: rtdb_server_port
+      description: "与库无关dubb端口号"
+      label: "kdm.rtdb.server.port"
+      required: true
+      default: 8083 
+      type: "int"
+
+    - variable: spring_application_name
+      description: "与库无关信息：如桐子林的vzdb与库无关--写成 vzdb_tzl(不得含有中文) "
+      label: "与库无关基本信息"
+      required: true
+      default: "vzdb_tzl"
+      type: "string"
+    
+    #实时库相关配置
+    - variable: rtdb_host
+      description: "选择需要连接的与库无关实时库" 
+      label: "实时库"
+      required: true 
+      type: "service"
+    - variable: rtdb_port
+      description: "选择需要连接的与库无关实时库端口号" 
+      label: "实时库端口号"
+      required: true
+      default: 22235
+      type: "int"
+    - variable: rtdb_user
+      description: "选择需要连接的与库无关实时库用户名" 
+      label: "实时库用户名"
+      required: true
+      default: "root"
+      type: "string"
+    - variable: rtdb_pwd
+      description: "选择需要连接的与库无关实时库密码" 
+      label: "实时库密码"
+      required: true
+      default: "root1234"
+      type: "password"
+
+    - variable: consul_service
+      description: "选择需要连接的Consul集群服务" 
+      label: "Consul 服务"
+      required: true
+      type: "service"
+
+    - variable: rtdb_rule
+      description: "该与库无关与实时库的编码规则 例如 EB003[0-9A-Z]{24}[^C].{3}"
+      label: "与库无关编码规则"
+      required: true
+      default: "EB003[0-9A-Z]{24}[^C].{3}" 
+      type: "string"
+
+    - variable: user_path
+      description: "用户目录"
+      label: "服务器用户目录"
+      default: "oge"
+      required: true
+      type: "string"
+    - variable: rtdb_type
+      description: "RTDB 类型[vzdb,vzdbBlock,pi,agilor,comtop,demo,edna,magus,smartReal,rdbBlock,rtdbc]"
+      label: "与库无关类型"
+      default: "vzdb"
+      required: true
+      type: "string"
+rtdb: 
+  scale: 1

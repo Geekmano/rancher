@@ -1,0 +1,33 @@
+.catalog: 
+  name: Kafka
+  version: 1.0.0 
+  description: |
+    Apache Kafka
+  uuid: kafka-0
+  questions:
+    - variable: "kafka_port"
+      description: "kafka 端口号"
+      label: "kafka.port"
+      required: true
+      default: 9092
+      type: "int"
+    - variable: "zookeeper_port"
+      description: "zookeeper 端口号"
+      label: "zookeeper.port"
+      required: true
+      default: 2181 
+      type: "int"
+    - variable: "user_path"
+      description: "用户目录，默认oge"
+      label: "用户目录"
+      required: true
+      default: "oge" 
+      type: "string"
+    - variable: "host_ip"
+      description: "kafka需要广播的地址，客户端在本机调用kafka则填写本机IP"
+      label: "ADVERTISED_HOST_NAME"
+      required: true
+      default: 192.168.21.1
+      type: "string"
+kafka:
+  scale: 1

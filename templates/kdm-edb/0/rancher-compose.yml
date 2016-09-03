@@ -1,0 +1,53 @@
+.catalog: 
+  name: kdm-edb 
+  version: 1.1.0-SNAPSHOT # Version of the versioned template of the Catalog Entry 
+  description: oge product kdm-edb # Description of the versioned template of the Catalog Entry
+  uuid: kdm-edb-0 # Unique identifier to be used for upgrades. Please see note. 
+  questions:
+    - variable: edb_server_port
+      description: "edb服务端口号" 
+      label: "edb服务端口号"
+      required: true
+      default: 8084
+      type: "int"
+
+    #实时库相关配置
+    - variable: edb_host
+      description: "选择需要连接的与库无关实时库" 
+      label: "事件数据实时库"
+      required: true 
+      type: "service"
+    - variable: edb_port
+      description: "选择需要连接的与库无关实时库端口号" 
+      label: "实时库端口号"
+      required: true
+      default: 22136
+      type: "int"
+    - variable: edb_user
+      description: "选择需要连接的与库无关实时库用户名" 
+      label: "实时库用户名"
+      required: true
+      default: "root"
+      type: "string"
+    - variable: edb_pwd
+      description: "选择需要连接的与库无关实时库密码" 
+      label: "实时库密码"
+      required: true
+      default: "root1234"
+      type: "password"
+
+    - variable: consul_service
+      description: "选择需要连接的Consul集群服务" 
+      label: "Consul 服务"
+      required: true
+      type: "service"
+
+    - variable: user_path
+      description: "用户目录"
+      label: "服务器用户目录"
+      default: "oge"
+      required: false
+      type: "string"
+
+edb: 
+  scale: 1

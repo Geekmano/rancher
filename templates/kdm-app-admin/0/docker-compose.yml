@@ -1,0 +1,10 @@
+kdm-app-admin: 
+  image: docker.orientge.cn:5000/oge/kdm-app-admin:1.0.0
+  ports: 
+    - ${server_port}:80/tcp
+  external_links: 
+    - ${consul_service}:consul
+  # environment: 
+  # volumes: 
+  #   - /home/${user_path}/oge_program/log/kdm_rmq_manager/${web_port}:/oge/log
+  container_name: kdm-app-admin

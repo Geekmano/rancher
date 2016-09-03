@@ -1,0 +1,33 @@
+.catalog: 
+  name: vzdb 
+  version: 2.72.1 # Version of the versioned template of the Catalog Entry 
+  description: oge product vzdb # Description of the versioned template of the Catalog Entry
+  uuid: vzdb-0 # Unique identifier to be used for upgrades. Please see note
+  minimum_rancher_version: v0.56.0
+  questions:
+    - variable: vzdb_port
+      description: "vzdb服务监听的端口号"
+      label: "vzdb 端口号"
+      required: true
+      default: 22235
+      type: "int"
+    - variable: vzevt_port
+      description: "vzevt服务监听的端口号"
+      label: "vzdb 端口号"
+      required: true
+      default: 22136
+      type: "int"
+    - variable: vzdb_name
+      description: "vzdb 容器名称 格式推荐为vzdb_xiangjiaba ,表示向家坝电厂的vzdb"
+      label: "vzdb 名称"
+      default: vzdb_xiangjiaba
+      required: true
+      type: "string"
+    - variable: user_path
+      description: "服务器用户名称 默认是oge "
+      label: "服务器用户目录"
+      default: oge
+      required: true
+      type: "string"
+vzdb: 
+  scale: 1

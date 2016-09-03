@@ -1,0 +1,5 @@
+name: ActiveMQ
+description: |
+   消息中间件ActiveMQ,同步接受端与发送端通信 
+version: 5.13.2
+category: Clustering

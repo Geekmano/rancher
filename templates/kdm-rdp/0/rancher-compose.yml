@@ -1,0 +1,65 @@
+.catalog: 
+  name: kdm-rdp 
+  version: 1.0 # Version of the versioned template of the Catalog Entry 
+  description: oge product kdm-rdp # Description of the versioned template of the Catalog Entry
+  uuid: kdm-rdp-0 # Unique identifier to be used for upgrades. Please see note. 
+  questions:
+    - variable: server_port
+      description: "kdm 服务端口号"
+      label: "kdm.rdp.http.port"
+      required: true
+      default: 8082
+      type: "int"
+    - variable: ice_port
+      description: "ice端口号"
+      label: "ice.port"
+      default: 30000
+      required: true
+      type: "int"
+
+
+    - variable: user_path
+      description: "用户目录"
+      label: "服务器用户目录"
+      default: "oge"
+      required: false
+      type: "string"
+
+    - variable: postgres_host
+      description: "请选择合适的数据源"
+      label: "KDM数据库"
+      required: true
+      type: "service"
+    - variable: postgres_port
+      description: "数据库暴露的端口号"
+      label: "数据库端口号"
+      default: 5432
+      required: true
+      type: "int" 
+    - variable: postgres_database
+      description: "该数据的名称"
+      label: "数据库名称"
+      default: "kdm_rdp"
+      required: true
+      type: "string"
+    - variable: postgres_user
+      description: "连接数据库用的用户名"
+      label: "数据库用户名"
+      default: "postgres"
+      required: true
+      type: "string"
+    - variable: postgres_password
+      description: "连接数据库用的用户密码"
+      label: "数据库密码"
+      default: "postgres"
+      required: true
+      type: "password"  
+  
+    - variable: consul_service
+      description: "consul集群服务"
+      label: "consul服务"
+      required: true
+      type: "service"
+  
+kdm-rdp: 
+  scale: 1

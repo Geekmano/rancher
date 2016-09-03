@@ -1,0 +1,98 @@
+.catalog: 
+  name: kdm-sync-sender
+  version: 2.4.0-SNAPSHOT # Version of the versioned template of the Catalog Entry 
+  description: 同步服务发送端 # Description of the versioned template of the Catalog Entry
+  uuid: kdm-sync-sender-0 # Unique identifier to be used for upgrades. Please see note. 
+  questions:
+    - variable: server_port
+      description: "kdm 服务端口号"
+      label: "server.port"
+      required: true
+      default: 8088
+      type: "int"
+    - variable: sync_sender_type
+      description: "发送端类型[rdp,kafka]"
+      label: "同步发送端类型"
+      default: "kafka"
+      required: true
+      type: "string"
+
+
+    - variable: user_path
+      description: "用户目录"
+      label: "服务器用户目录"
+      default: "oge"
+      required: false
+      type: "string"
+
+    - variable: postgres_host
+      description: "数据库连接地址,不能填写127.0.0.1"
+      label: "数据库IP"
+      required: true
+      type: "string"
+    - variable: postgres_port
+      description: "数据库暴露的端口号"
+      label: "数据库端口号"
+      default: 5432
+      required: true
+      type: "int" 
+    - variable: postgres_database
+      description: "该数据的名称"
+      label: "数据库名称"
+      default: "kdm_rdp"
+      required: true
+      type: "string"
+    - variable: postgres_user
+      description: "连接数据库用的用户名"
+      label: "数据库用户名"
+      default: "postgres"
+      required: true
+      type: "string"
+    - variable: postgres_password
+      description: "连接数据库用的用户密码"
+      label: "数据库密码"
+      default: "postgres"
+      required: true
+      type: "password" 
+  
+    - variable: consul_service
+      description: "consul集群服务"
+      label: "consul服务"
+      required: true
+      type: "service"
+
+    
+    - variable: activemq_host
+      description: "ActiveMQ消息中间件地址,不能填写127.0.0.1"
+      label: "activemq.host"
+      required: true
+      type: "string"
+    - variable: activemq_port
+      description: "ActiveMQ消息中间件端口号"
+      label: "activemq.port"
+      default: 61616
+      required: true
+      type: "int" 
+
+    - variable: source_host
+      description: "dubbo服务超时时间，单位毫秒"
+      label: "dubbo超时时间"
+      default: 60000
+      required: false
+      type: "int"
+    - variable: source_port
+      description: "dubbo服务负载量"
+      label: "dubbo服务负载量"
+      default: 838860800
+      required: false
+      type: "int"   
+
+    - variable: zookeeper_url
+      description: "zookeeper地址,用于连接kafka,格式 ip:port"
+      label: "数据中心路由地址"
+      required: true
+      type: "string"
+
+  
+kdm-sync-sender: 
+  scale: 1

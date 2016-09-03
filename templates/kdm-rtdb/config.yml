@@ -1,0 +1,5 @@
+name: kdm-rtdb
+description: |
+   实时数据平台与库无关模块
+version: 3.9.0-SNAPSHOT
+category: clustering

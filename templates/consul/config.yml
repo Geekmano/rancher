@@ -1,0 +1,5 @@
+name: Consul Cluster
+description: |
+  Consul 服务发现集群
+version: 0.6-rancher1
+category: Versioning

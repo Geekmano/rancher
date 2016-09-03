@@ -1,0 +1,18 @@
+zookeeper:
+  image: wurstmeister/zookeeper
+  ports:
+    - ${zookeeper_port}:2181/tcp
+kafka:
+  image: wurstmeister/kafka:latest
+  ports:
+    - ${kafka_port}:9092/tcp
+  environment:
+    KAFKA_ADVERTISED_HOST_NAME: ${host_ip}
+    KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    KAFKA_ADVERTISED_PORT: 9092
+    KAFKA_BROKER_ID: 1
+  volumes:
+      - /home/${user_path}/oge_program/log/kafka:/kafka
+      - /var/run/docker.sock:/var/run/docker.sock
+  container_name: kafka
+ 

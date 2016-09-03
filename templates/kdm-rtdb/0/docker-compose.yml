@@ -1,0 +1,17 @@
+rtdb: 
+  image: docker.orientge.cn:5000/oge/kdm-rtdb-full:3.10.0-RC3
+  ports: 
+    - ${rtdb_server_port}:8083/tcp
+  external_links:
+    - ${consul_service}:consul
+    - ${rtdb_host}:rtdb
+  environment: 
+    rtdb.port: ${rtdb_port}
+    rtdb.username: ${rtdb_username}
+    rtdb.password: ${rtdb_password}
+    rtdb.rule: ${rtdb_rule}
+    rtdb.type: ${rtdb_type}
+    spring.application.name: ${spring_application_name}
+  volumes: 
+    - /home/${user_path}/oge_program/log/kdm-${rtdb_type}:/oge/log
+  container_name: kdm-rtdb-${rtdb_type}

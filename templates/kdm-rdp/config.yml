@@ -1,0 +1,5 @@
+name: kdm-rdp
+description: |
+   实时数据平台KDM住程序
+version: 1.0
+category: Clustering

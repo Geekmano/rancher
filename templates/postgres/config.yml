@@ -1,0 +1,5 @@
+name: postgres
+description: |
+   实时数据平台数据库-Postgres:9.3
+version: 9.3
+category: clustering 

@@ -1,0 +1,14 @@
+edb: 
+  image: docker.orientge.cn:5000/oge/kdm-edb:1.1.0-RC3
+  ports: 
+    - ${edb_server_port}:8084/tcp
+  external_links:
+    - ${consul_service}:consul
+    - ${edb_host}:vzevt
+  environment: 
+    kdm.edb.port: ${edb_port}
+    kdm.edb.username: ${edb_username}
+    kdm.edb.password: ${edb_password}
+  volumes: 
+    - /home/${user_path}/oge_program/log/kdm-edb:/oge/log
+  container_name: kdm-edb

@@ -1,0 +1,14 @@
+kdm-sync-receiver: 
+  image: docker.orientge.cn:5000/oge/kdm-sync-receiver:2.4.0-SNAPSHOT
+  ports: 
+    - ${server_port}:80/tcp
+  external_links: 
+    - ${consul_service}:consul
+  environment: 
+    kdm.sync.activemq.host: ${activemq_host}
+    kdm.sync.activemq.port: ${activemq_port}
+    kdm.sync.target.host: ${kdm_rdp_host}
+    kdm.sync.target.port: ${rdp_dubbo_port}
+  volumes: 
+    - /home/${user_path}/oge_program/log/kdm-sync-receiver/${server_port}:/oge/log
+  container_name: kdm-sync-receiver

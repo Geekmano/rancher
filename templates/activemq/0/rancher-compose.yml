@@ -1,0 +1,43 @@
+.catalog: 
+  name: activeMQ
+  version: 5.13.2 # Version of the versioned template of the Catalog Entry 
+  description: message queen for kdm-sync # Description of the versioned template of the Catalog Entry
+  uuid: activeMQ-0 # Unique identifier to be used for upgrades. Please see note. 
+  questions:
+    - variable: admin_port
+      description: "activeMQ 控制台端口号"
+      label: "admin.port"
+      required: true
+      default: 8161
+      type: "int"
+    - variable: openwire_port
+      description: "activeMQ openwire端口号"
+      label: "openwire.port"
+      default: 61616
+      required: true
+      type: "int"
+
+
+    - variable: user_path
+      description: "用户目录"
+      label: "服务器用户目录"
+      default: "oge"
+      required: false
+      type: "string"
+
+    - variable: min_memory
+      description: "activeMQ占用最小内存,默认1024m"
+      label: "activeMQ.min.memory"
+      default: 1024
+      required: true
+      type: "int" 
+  
+    - variable: max_memory
+      description: "activeMQ占用最大内存,默认4096m"
+      label: "activeMQ.max.memory"
+      default: 4096
+      required: true
+      type: "int"
+  
+activemMQ: 
+  scale: 1

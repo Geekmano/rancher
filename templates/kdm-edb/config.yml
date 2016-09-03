@@ -1,0 +1,5 @@
+name: kdm-edb
+description: |
+   实时数据平台事件接口模块
+version: 1.1.0-SNAPSHOT
+category: Versioning

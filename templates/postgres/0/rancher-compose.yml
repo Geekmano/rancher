@@ -1,0 +1,33 @@
+﻿.catalog: 
+  name: postgres 
+  version: 9.3 # Version of the versioned template of the Catalog Entry 
+  description: oge db service # Description of the versioned template of the Catalog Entry
+  uuid: postgres_0 # Unique identifier to be used for upgrades. Please see note. 
+  questions: 
+    - variable: userpath
+      description: "用户目录"
+      label: "服务器用户目录"
+      default: "oge"
+      required: false
+      type: "string"
+    - variable: db_port
+      description: "数据库端口号"
+      label: "kdm.rdp.postgre.port:"
+      default: 5432
+      required: true
+      type: "int"
+    - variable: db_name
+      description: "数据库名称"
+      label: "kdm.rdp.postgre.name:"
+      default: kdm_rdp
+      required: true
+      type: "string"
+    - variable: db_password
+      description: "数据库密码"
+      label: "kdm.rdp.postgre.password:"
+      default: postgres
+      required: true
+      type: "string"  
+
+db: 
+  scale: 1	

@@ -1,0 +1,5 @@
+name: kdm-sync-sender
+description: |
+   kdm同步程序发送端
+version: 2.4.0-SNAPSHOT
+category: Clustering

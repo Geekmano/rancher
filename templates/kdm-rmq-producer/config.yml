@@ -1,0 +1,5 @@
+name: kdm-rmq-producer
+description: |
+   kdm消息模块生产者
+version: 1.0.0-SNAPSHOT
+category: Clustering

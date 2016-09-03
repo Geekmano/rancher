@@ -1,0 +1,61 @@
+.catalog: 
+  name: kdm-rmq-manager
+  version: 1.0.0-SNAPSHOT # Version of the versioned template of the Catalog Entry 
+  description: oge product kdm-rmq-manager # Description of the versioned template of the Catalog Entry
+  uuid: kdm-rmq-manager-0 # Unique identifier to be used for upgrades. Please see note. 
+  questions:
+    - variable: server_port
+      description: "kdm_rmq_manager服务端口号"
+      label: "kdm.rmq.manager.port"
+      required: true
+      default: 20841
+      type: "int"
+
+
+    - variable: user_path
+      description: "用户目录"
+      label: "服务器用户目录"
+      default: "oge"
+      required: false
+      type: "string"
+    - variable: postgres_host
+      description: "数据库连接地址,不能填写127.0.0.1"
+      label: "数据库IP"
+      required: true
+      type: "service"
+    - variable: postgres_post
+      description: "数据库暴露的端口号"
+      label: "数据库端口号"
+      default: 5432
+      required: true
+      type: "int" 
+    - variable: postgres_database
+      description: "该数据的名称"
+      label: "数据库名称"
+      default: "kdm_rdp"
+      required: true
+      type: "string"
+    - variable: postgres_user
+      description: "连接数据库用的用户名"
+      label: "数据库用户名"
+      default: "postgres"
+      required: true
+      type: "string"
+    - variable: postgres_password
+      description: "连接数据库用的用户密码"
+      label: "数据库密码"
+      default: "postgres"
+      required: true
+      type: "password"
+
+
+    - variable: consul_service
+      description: "consul集群服务"
+      label: "consul服务"
+      required: true
+      type: "service"
+
+
+  
+kdm-rmq-manager: 
+  scale: 1

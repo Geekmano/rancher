@@ -1,0 +1,2 @@
+# info
+* rancher templates

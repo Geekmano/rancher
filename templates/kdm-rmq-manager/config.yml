@@ -1,0 +1,5 @@
+name: kdm-rmq-manager
+description: |
+   实时数据平台RMQ管理中心
+version: 1.0.0-SNAPSHOT
+category: Clustering
