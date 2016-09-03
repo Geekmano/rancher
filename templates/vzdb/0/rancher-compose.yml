@@ -3,7 +3,6 @@
   version: 2.72.1 # Version of the versioned template of the Catalog Entry 
   description: oge product vzdb # Description of the versioned template of the Catalog Entry
   uuid: vzdb-0 # Unique identifier to be used for upgrades. Please see note
-  minimum_rancher_version: v0.56.0
   questions:
     - variable: vzdb_port
       description: "vzdb服务监听的端口号"
